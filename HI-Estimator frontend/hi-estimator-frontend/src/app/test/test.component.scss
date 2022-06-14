@@ -1,0 +1,277 @@
+// top - nav bar
+:is(.menu-spacer, .spacer) {
+    flex: 1 1 auto;
+}
+
+.mat-sidenav {
+    width: 175px;
+}
+
+.mat-toolbar {
+    min-height: 50px !important;
+    height: 66px !important;
+    background-color: #34b2b2;
+    
+}
+
+.mat-toolbar-row {
+    min-height: 50px !important;
+    height: 100% !important;
+}
+
+.sidenav {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    color: rgba(249, 243, 243, 0.85);
+    text-shadow: 0.1px 0px #d6cdcd;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 1.4;
+    margin-left: 15px;
+    padding-top: 1px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+:is(.side-menu p,.menu-options a) {
+    color: rgba(249, 243, 243, 0.85);
+    font-weight: 550;
+    font-size: 18px;
+    line-height: 1.4;
+    margin-left: 15px;
+    padding-top: 1px;
+    text-shadow: 0.1px 0px #d6cdcd;
+}
+
+a{
+    height: 35px;
+    color: rgba(43, 36, 36, 0.85);
+    font-weight: 550;
+    font-size: 18px;
+    line-height: 1.4;
+    margin-left: 15px;
+    padding-top: 1px;
+    text-shadow: 0.1px 0px #6a6767;
+    text-align: center;
+}
+
+.selected{
+    background-color: rgba(11, 60, 60, 0.396);
+    color: rgb(207, 228, 228);
+    text-decoration: solid;
+    text-align: center;
+    padding-top: 5px;
+    text-shadow: 0.2px 0 rgb(190, 189, 189);
+}
+
+
+// top - nav bar
+
+
+// main content
+body {
+    height: 100%;
+}
+
+.content {
+    height: calc(100vh - 66px);
+    background-color: rgb(229, 235, 233);
+    
+    max-height: 100%;
+    overflow: hidden;
+}
+
+// main - content
+
+
+// form heading
+
+.heading-text {
+    margin-top: 2%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.form-heading {
+    background-color:rgba(1, 9, 1, 0.682);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+}
+
+.text{
+    color: white;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 1.4;
+    margin-left: 15px;
+    padding-top: 1px;
+    text-shadow: 0.1px 0px #6a6767;
+    
+}
+
+// form heading
+
+
+// form content
+
+.container-form {
+    margin-right: 10%;
+    margin-left: 10%;
+    height: 85vh;
+    overflow-y: auto;
+    box-shadow: 6px 4px 4px rgb(163, 168, 167);
+    margin-top: 20px;
+    border-right: 0.3px;
+    border-bottom: 0.3px;
+    border-color:rgb(163, 168, 167);
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    background-color: #eef1eae3;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+
+:is(.test-form) {
+    height: max-content;
+    width: 100%;
+    border: 2px solid #235454;
+    align-self: center;
+    justify-self: center;
+}
+
+.option {
+    display: inline-flex;
+    flex-direction: row;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.input {
+    width: 45%;
+    margin: 10px 2.5%;
+    height: 40px;
+}
+
+.options {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+:is( .button-calculate) {
+    color: #131818;
+    font-size: xx-large;
+    font-weight: 500;
+    text-shadow: 0.1px 0px #a8a2a2;
+}
+
+.button-calculate {
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+}
+
+
+
+.result .mat-raised-button {
+    background-color: rgba(70, 204, 148, 0.933);
+    // background-color: rgba(150, 196, 139, 0.933);
+    color: rgb(26, 29, 37);
+    max-width: 350px;
+    height: 45px;
+    text-shadow: 0.1px 0 black;
+}
+
+.button-text{
+    color: white;
+    text-shadow: 0.1px 0 black;
+    font-size: x-large;
+    font-weight: 500;
+}
+
+
+.side-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// form content
+
+
+// mat content
+.mat-button {
+    color: rgb(13, 12, 12);
+    text-decoration: solid;
+}
+
+.mat-select {
+    width: 90%;
+}
+
+.mat-form-field {
+    width: 80%;
+    padding-left: 5%;
+    .mat-form-field-infix {
+        width: 100%;
+    }
+}
+
+.mat-raised-button {
+    width: 50%;
+    background-color: #268026;
+    text-shadow: 0.1px 0 black;
+    max-width: 350px;
+    height: 45px;
+}
+
+
+// mat content
+
+
+// result fields
+.result {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: fit-content;
+    flex-wrap: nowrap;
+    
+}
+
+.result-value {
+    align-self: center;
+    justify-self: center;
+    
+}
+
+.okay-button {
+    
+    display: flex;
+    width: max-content;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+// result fields

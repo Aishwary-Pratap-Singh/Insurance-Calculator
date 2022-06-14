@@ -1,0 +1,108 @@
+.form-outline{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(250, 250, 250);
+    min-width: 350px;
+    min-height: 450px;
+}
+
+.form{
+    border: 1px groove rgba(57, 57, 58, 0.756);
+    background-color: rgb(231, 232, 233);
+    display: inline-flex;
+    width: 30%;
+    height: 60%;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 300px;
+    min-height: 300px;
+    border-radius: 5px;
+
+    .login{
+        padding-left: 15px;
+        .title{
+            font-size: 30px;
+            font-weight: 525;
+            text-shadow: 0.1px 0 rgb(156, 155, 155);
+            padding-right: 5px;
+            margin-right: 3px;
+        }
+    }
+    
+}
+
+.img{
+    display: inline-flex;
+    align-self: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    background-color: rgb(172, 170, 169);
+    
+    
+}
+:is(.email,.password){
+    width: 90%;
+    padding-left: 5%;
+}
+
+.example-full-width{
+    min-width: 100px;
+    width: 90%;
+    padding-left: 5%;
+    
+}
+
+.button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.button-mat{
+    width: 50%;
+    max-width: 150px;
+}
+
+.info{
+    font-size: 14px;
+    font-weight: 400;
+    text-shadow: 0.1px 0 rgb(156, 155, 155);
+    padding-right: 5px;
+    margin-right: 3px;
+
+    span{
+        font-size: 16px;
+        font-weight: 525;
+        text-shadow: 0.1px 0 rgb(156, 155, 155);
+        padding-right: 5px;
+        margin-right: 3px;
+        :hover{
+            cursor: pointer;
+        }
+    }
+}
+
+::ng-deep input.mat-input-element {
+    color: #57595b;
+  }
+  
+  /* Change label color on focused */
+  ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: #090a0a !important;
+  }
+  
+  /* underline border color on focused */
+//   ::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple{
+//     background-color: #8650fb !important;
+//   }

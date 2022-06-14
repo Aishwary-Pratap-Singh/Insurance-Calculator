@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.green-snackbar {
+  background: rgb(192, 231, 135);
+  color: black
+}
+
+.green-snackbar .mat-simple-snackbar-action {
+  color: black;
+}
+
+.red-snackbar {
+  background: rgb(205, 95, 59);
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+
+.red-snackbar .mat-simple-snackbar-action {
+  color: rgb(255, 255, 255);
+}
+
+.btn-dialog-close {
+  width: 45px;
+  min-width: 0px !important;
+  height: 40px;
+  padding: 0px !important;
+}
+
+html.cdk-global-scrollblock body {
+  overflow: hidden;
+}
+
+.cdk-overlay-container {
+  overflow: auto;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import "~mdb-angular-ui-kit/assets/scss/mdb.scss";

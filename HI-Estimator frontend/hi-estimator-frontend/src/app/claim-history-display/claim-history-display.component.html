@@ -1,0 +1,72 @@
+<div class="content">
+    <div class="outer">
+    <div class="inner">
+    <div class="title"><h2>Policy</h2></div>
+    <div class="fillspace"></div>
+    
+    <div class="title">:</div>
+    <div class="fillspace"></div>
+    <div class="value"><h3>{{ history.policy}}</h3></div>
+    </div>
+    <div class="inner"> 
+    <div class="title"><h2>Sub Plan</h2></div>
+    <div class="fillspace"></div>
+    <div class="title">:</div>
+    <div class="fillspace"></div>
+    <div class="value"><h3> {{ history.sub_plan}}</h3></div>
+    </div>
+    </div>
+    <div class="outer">
+    <div class="inner">
+    <div class="title"><h2>Cover</h2></div>
+    <div class="fillspace"></div>
+    <div class="title">:</div>
+    <div class="fillspace"></div>
+    <div class="value"><h3> {{ history.cover}}</h3></div>
+    </div>
+    <div class="inner">
+    <div class="title"><h2>Disease</h2></div>
+    <div class="fillspace"></div>
+    <div class="title">:</div>
+    <div class="fillspace"></div>
+    <div class="value"><h3> {{ history.disease}}</h3></div>
+    </div>
+    </div>
+    <div class="outer">
+    <div class="inner">
+    <div class="title"><h2>Hospital Charges</h2></div>
+    <div class="fillspace"></div>
+    <div class="title">:</div>
+    <div class="fillspace"></div>
+    <div class="value"><h3> {{ history.hospital_charges}}</h3></div>
+    </div>
+    <div class="inner">
+    <div class="title"><h2>Co-Payment</h2></div>
+    <div class="fillspace"></div>
+    <div class="title">:</div>
+    <div class="fillspace"></div>
+    <div class="value"><h3> {{ history.co_pay}}</h3></div>
+    </div>
+    </div>
+    <div class="outer">
+    <div class="inner">
+    <div class="title"><h2>Id </h2></div>
+    <div class="fillspace"></div>
+    <div class="title">:</div>
+    <div class="fillspace"></div>
+    <div class="value"><h3> {{ history.id}}</h3></div>
+    </div>
+    <div class="inner">
+    <div class="title"><h2>Past Claims </h2></div>
+    <div class="fillspace"></div>
+    <div class="title">:</div>
+    <div class="fillspace"></div>
+    <div class="value"><h3> {{ history.past_claims}}</h3></div>
+    </div>
+    </div>
+    <div >
+    
+    <!-- <button class="btn" (click)="onPrint( history.id )"> Download</button> -->
+    <button type="button" class="btn btn-primary btn-md btn-block btn-success" (click)="onPrint( history.id )">Download</button>
+    </div>
+   </div>

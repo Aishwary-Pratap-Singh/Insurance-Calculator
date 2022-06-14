@@ -1,0 +1,64 @@
+// @import "~bootstrap-icons/font/bootstrap-icons.css";
+ 
+@media (min-width:600px) {
+    .block{
+     // border: 2px solid red;
+     height: max-content;
+     width: 40%;
+     align-items: center;
+     justify-content: center;
+     margin-left: 30%;
+     border-radius: 3%;
+     margin-top: 3%;
+    }
+    }
+     
+    .c1{
+     background-color: azure;
+    }
+    .c2{
+     background-color: aliceblue;
+    }
+    .content{
+     // margin-left: 220px;
+     // color: aqua;
+     padding-left: 15%;
+    }
+    .right{
+     margin-right: 8%;
+     padding-right: 8%;
+     color: aquamarine;
+    }
+    .bt{
+     width: 40%;
+     margin-left: 30%;
+    }
+    .icon{
+     height: 20%;
+     
+    }
+    .info{
+     margin-left: 20%;
+     
+    }
+    .rt{
+     padding-left: 15%
+    }
+     
+     @media (max-width: 600px) {
+     .outer {
+     width: 100%;
+     
+     }
+     .block{
+     // margin: 10px;
+     padding: 10px;
+     height: max-content;
+     width: 100%;
+     
+    
+     }
+
+     }
+
+   

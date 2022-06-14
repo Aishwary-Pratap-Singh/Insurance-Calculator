@@ -1,0 +1,120 @@
+<div class="outer">
+  <div class="block" id="htmlData" >
+   <div class="card c1">
+   <div class="card-body">
+   
+   
+   <!-- <div class="icon">
+   <i class="bi bi-hospital "></i>
+   </div> -->
+   <!-- <div class="info"> -->
+   <h3> <b>Charges imposed by hospital </b></h3>
+   
+   
+   {{hospitalCharges}}
+   <!-- </div> -->
+   </div>
+   </div>
+   
+   
+   <div class="card c2">
+   <div class="card-body">
+   <h3><b>Disease Identified</b></h3>
+   
+   
+   {{diseaseIndentified}}
+   </div>
+   </div>
+   
+   <div class="card c1">
+   <div class="card-body">
+   <h3><b>Cover amount</b> </h3>
+   
+   
+   {{coverAmount}}
+   </div>
+   </div>
+   
+   <table class="table c2">
+   
+   <tbody>
+   <!-- <tr>
+   
+   <td class="content">Disease</td>
+   
+   <td>@mdo</td>
+   </tr> -->
+   <tr>
+   
+   <td class="content">Disease claims</td>
+   
+   <td class="rt"> {{diseaseClaims}} </td>
+   </tr>
+   <tr>
+   
+   <td class="content">Email</td>
+   
+   <td class="rt"> {{email}} </td>
+   </tr>
+   
+   <tr>
+   
+   <td class="content">Opted rent</td>
+   <td class="rt"> {{optedRent}} </td>
+   </tr>
+   
+   <tr>
+   
+   <td class="content">Past claims</td>
+   <td class="rt"> {{pastClaims}} </td>
+   </tr>
+   
+   <tr>
+   
+   <td class="content">Policy</td>
+   <td class="rt"> {{policy}} </td>
+   </tr>
+   
+   <tr>
+   
+   <td class="content">Rent</td>
+   <td class="rt">{{rent}}</td>
+   </tr>
+   
+   
+   
+   <tr>
+   
+   <td class="content">Sub Plan</td>
+   <td class="rt">{{subPlan}}</td>
+   </tr>
+   
+   <tr>
+   
+   <td class="content">Co-pay</td>
+   <td class="rt">{{coPay}}</td>
+   </tr>
+   
+   <tr>
+   
+   <td class="content">History Date</td>
+   <td class="rt">{{historyDate}}</td>
+   </tr>
+   
+   <tr>
+   
+   <td class="content"> <h4><strong>Estimated Amount</strong></h4> </td>
+   <td class="rt"> <h4><b> {{result}} </b></h4></td>
+   </tr>
+   </tbody>
+   </table>
+   <!-- <button type="button" class="btn btn-outline-dark left">Dark</button>
+   <div class="right">
+   <button type="button" class="btn btn-outline-dark ">Dark</button>
+   </div> -->
+   
+   </div>
+   
+   <button type="button" class="btn btn-success btn-lg btn-block bt" (click)="openPDF()">Download</button>
+   <button type="button" class="btn btn-danger btn-lg btn-block bt" routerLink="/home/claim">Go Back</button>
+   </div>

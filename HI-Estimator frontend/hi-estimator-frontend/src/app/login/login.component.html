@@ -1,0 +1,63 @@
+<div class="form-outline" > 
+  <form class="form" [formGroup]="registerForm" [class.mat-elevation-z8]=true>
+
+    <div class="login">
+      <img mat-card-image src="../../assets/user_logo_login.png" class="img"/>
+      <h1 class="title">Log in</h1>
+    </div>
+    <div class="email">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label >Email</mat-label>
+        <input
+          type="email"
+          matInput
+          [formControl]="emailFormControl"
+          formControlName="email"
+          [errorStateMatcher]="matcher"
+          placeholder="Ex. abc@example.com"
+        />
+        <mat-error
+          *ngIf="
+            emailFormControl.hasError('email') &&
+            !emailFormControl.hasError('required')
+          "
+        >
+          Please enter a valid email address
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="password">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password" class="pswd"/>
+        <mat-error *ngIf="registerForm.value.password"
+          >Password must be a combination of lower-case, upper-case, numbers and
+          at least 9 characters long</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="button">
+      
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="!registerForm.valid"
+        (click)="login()"
+        class="button-mat"
+      >
+        Login
+      </button>
+    </div>
+
+    <div class="sign-up-nav">
+      <p class="info">Create a new account? <span style="color: blue;"><a (click)="onSignUp()">Sign up</a></span> </p>
+    </div>
+
+  </form>
+</div>
+
+
+<!-- th -->

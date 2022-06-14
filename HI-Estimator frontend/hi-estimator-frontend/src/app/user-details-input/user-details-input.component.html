@@ -1,0 +1,162 @@
+<mat-toolbar>
+  <span>Profile Details</span>
+  <span class="fill-remaining-space"></span>
+  <button
+    class="btn-dialog-close"
+    mat-stroked-button
+    (click)="onClose()"
+    tabIndex="-1"
+  >
+    <mat-icon>clear</mat-icon>
+  </button>
+</mat-toolbar>
+<form [formGroup]="updateForm">
+  <!-- 2 column grid layout with text inputs for the first and last names -->
+  <div class="row mb-4">
+    <div class="col">
+      <div class="form-outline">
+        <mat-form-field appearance="fill">
+          <mat-label>First Name</mat-label>
+          <input matInput type="text" formControlName="firstname" />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name</mat-label>
+          <input matInput type="text" formControlName="lastname" />
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col">
+      <div class="form-outline">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            type="email"
+            [readonly]="this.disable"
+            formControlName="email"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <mat-form-field appearance="fill" class="example-form-field">
+          <mat-label>Date Of Birth</mat-label>
+          <input
+            matInput
+            [matDatepicker]="datepicker3"
+            formControlName="date"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="datepicker3"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #datepicker3></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <div class="form-outline mb-4">
+    <mat-form-field appearance="fill">
+      <mat-label>Phone Number</mat-label>
+      <input matInput type="tel" formControlName="phone" />
+    </mat-form-field>
+  </div>
+
+  <div class="form-outline mb-4">
+    <mat-form-field appearance="fill">
+      <mat-label>Address</mat-label>
+      <textarea
+        matInput
+        type="text"
+        cdkTextareaAutosize
+        cdkAutosizeMinRows="1"
+        cdkAutosizeMaxRows="4"
+        formControlName="address"
+      ></textarea>
+    </mat-form-field>
+  </div>
+
+  <!-- Text input -->
+  <div class="form-outline mb-4">
+    <mat-form-field appearance="fill">
+      <mat-label>Policy Number</mat-label>
+      <input matInput type="text" 
+      formControlName="policyNumber" />
+    </mat-form-field>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col">
+      <div class="form-outline">
+        <mat-form-field appearance="fill" class="example-form-field">
+          <mat-label>Purchased On</mat-label>
+          <input matInput [matDatepicker]="datepicker" formControlName="purchasedDate" />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="datepicker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #datepicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <mat-form-field appearance="fill" class="example-form-field">
+          <mat-label>Due Date</mat-label>
+          <input matInput [matDatepicker]="datepicker1" formControlName="dueDate"/>
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="datepicker1"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #datepicker1></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col">
+      <div class="form-outline">
+        <mat-form-field appearance="fill">
+          <mat-label>Premium Amount</mat-label>
+          <input matInput type="text" formControlName="premiumAmount"  />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <mat-form-field appearance="fill">
+          <mat-label>Claimed Amount</mat-label>
+          <input matInput type="text" formControlName="alreadyClaimedAmount"/>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="bt">
+    <button
+      mat-raised-button
+      class="btn form-outline btn-success"
+      (click)="onUpdate()"
+    >
+      Update
+    </button>
+    <div class="space"></div>
+    <button
+      mat-raised-button
+      href="#"
+      class="btn form-outline btn-danger"
+      (click)="onCancel()"
+    >
+      Cancel
+    </button>
+  </div>
+</form>

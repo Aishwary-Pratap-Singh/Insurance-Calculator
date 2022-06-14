@@ -1,0 +1,23 @@
+<mat-toolbar style="width: 100%;">
+    <span style="max-width: 60%;" class="title-dialog">Profile Picture</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1">
+        <mat-icon>clear</mat-icon>
+    </button>
+</mat-toolbar>
+
+<!-- 2 column grid layout with text inputs for the first and last names -->
+<div class="outer-border">
+
+    <div class="image">
+        <img src="{{'data:image/jpg;base64,' + this.imageString}}">
+    </div>
+    <div class="input">
+        <input (change)="picked($event)" type="file">
+    </div>
+    <div class="bt">
+        <button mat-raised-button class="btn   btn-success" (click)="addPictures()">Upload</button>
+        <!-- <span class="fill-remaining-space"></span> -->
+        <button mat-raised-button class="btn   btn-danger" (click)="onClose()">Cancel</button>
+    </div>
+</div>

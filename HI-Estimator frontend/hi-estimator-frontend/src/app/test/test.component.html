@@ -1,0 +1,287 @@
+<!-- diesese claims
+total claims -->
+
+<div>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span class="title">HI-ESTIMATOR</span>
+      <span class="menu-spacer"></span>
+      <div fxShow="true" fxHide.lt-md class="menu-options">
+        <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+        <a
+          routerLink="/home"
+          mat-button
+          style="
+            color: rgb(12, 15, 26);
+            height: 15px;
+            text-shadow: 0.1px 0 rgb(54, 54, 54);
+          "
+          >Home</a
+        >
+        <a class="selected" style="padding-top: 4px" mat-button>Claims</a>
+        <a
+          routerLink="/home/profile"
+          mat-button
+          style="
+            color: rgb(12, 15, 26);
+            height: 15px;
+            text-shadow: 0.1px 0 rgb(54, 54, 54);
+          "
+          >Profile</a
+        >
+        <a
+          routerLink="/home/history"
+          mat-button
+          style="
+            color: rgb(12, 15, 26);
+            height: 15px;
+            text-shadow: 0.1px 0 rgb(54, 54, 54);
+          "
+          >History</a
+        >
+        <!-- <a href="#" mat-button>History</a> -->
+        <a
+          (click)="onLogOut()"
+          mat-button
+          style="
+            color: rgb(12, 15, 26);
+            height: 15px;
+            text-shadow: 0.1px 0 rgb(54, 54, 54);
+          "
+          >Log Out</a
+        >
+      </div>
+      <button
+        mat-icon-button
+        (click)="sidenav.toggle()"
+        fxShow="true"
+        fxHide.gt-sm
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav
+      #sidenav
+      position="end"
+      style="height: 100vh"
+      [autoFocus]="false"
+    >
+      <mat-nav-list class="sidenav">
+        <div><a routerLink="/home" mat-button>Home</a></div>
+        <div>
+          <a style="background-color: rgba(234, 239, 238, 0.57)" mat-button
+            >Claims</a
+          >
+        </div>
+        <div><a routerLink="/home/profile" mat-button>Profile</a></div>
+        <!-- <div><a href="#" mat-button>History</a></div> -->
+        <div><a (click)="onLogOut()" mat-button>Log Out</a></div>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <div class="content">
+      <form class="form" [formGroup]="claimForm">
+        <div class="container-form">
+          <mat-grid-list
+            cols="5"
+            rowHeight="100%"
+            style="min-height: 550px; min-width: 250px"
+            [class.mat-elevation-z8]="true"
+          >
+            <mat-grid-tile [colspan]="5" [rowspan]="1" style="overflow-y: auto">
+              <div class="options" style="height: 100%; width: 100%">
+                <div class="form-heading">
+                  <div class="heading-text">
+                    <h1 class="text">Enter Details</h1>
+                  </div>
+                </div>
+
+                <div class="option">
+                  <div class="input">
+                    <mat-form-field style="margin: 10px">
+                      <mat-select placeholder="Plan" formControlName="policy">
+                        <mat-option
+                          (onSelectionChange)="onPlan($event)"
+                          *ngFor="let insurer of data1"
+                          [value]="insurer"
+                        >
+                          {{ insurer }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <div class="input" [hidden]="this.disable">
+                    <mat-form-field style="margin: 10px">
+                      <mat-select
+                        placeholder="Sub-Plan"
+                        [disabled]="this.disable"
+                        formControlName="sub_plan"
+                      >
+                        <mat-option *ngFor="let plan of plans" [value]="plan">
+                          {{ plan }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="option" [hidden]="this.disableCoverAndDisease">
+                  <div class="input">
+                    <mat-form-field style="margin: 10px">
+                      <mat-select placeholder="Cover" formControlName="cover">
+                        <mat-option *ngFor="let plan of cover" [value]="plan">
+                          {{ plan }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <div class="input">
+                    <mat-form-field style="margin: 10px">
+                      <mat-select
+                        placeholder="Disease"
+                        formControlName="disease"
+                      >
+                        <mat-option
+                          (onSelectionChange)="onDisease($event)"
+                          *ngFor="let plan of disease"
+                          [value]="plan"
+                        >
+                          {{ plan }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="option">
+                  <div class="input">
+                    <mat-form-field style="margin: 10px">
+                      <mat-label>Hospital Charges</mat-label>
+                      <input
+                        matInput
+                        type="number"
+                        class="name"
+                        formControlName="hospital_charges"
+                      />
+                    </mat-form-field>
+                  </div>
+                  <div class="input">
+                    <mat-form-field style="margin: 10px">
+                      <mat-select
+                        placeholder="Co-Payment"
+                        formControlName="co_pay"
+                        [disabled]="this.disableCoPay"
+                      >
+                        <mat-option *ngFor="let plan of coPay" [value]="plan">
+                          {{ plan }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="option" [hidden]="this.disableRent">
+                  <div class="input">
+                    <mat-form-field style="margin: 10px">
+                      <mat-select
+                        placeholder="Opted Rent"
+                        formControlName="opted_rent"
+                      >
+                        <mat-option
+                          *ngFor="let plan of optedRent"
+                          [value]="plan"
+                        >
+                          {{ plan }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <div class="input">
+                    <mat-form-field style="margin: 10px">
+                      <mat-label>Rent</mat-label>
+                      <input
+                        matInput
+                        type="number"
+                        class="name"
+                        formControlName="rent"
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="option">
+                  <div class="input" [hidden]="this.disableCoverAndDisease">
+                    <mat-form-field style="margin: 10px">
+                      <mat-label
+                        >Enter previous claims of
+                        {{ selectedDisease }}</mat-label
+                      >
+                      <input
+                        matInput
+                        type="number"
+                        class="name"
+                        formControlName="disease_claims"
+                      />
+                    </mat-form-field>
+                  </div>
+                  <div class="input">
+                    <mat-form-field style="margin: 10px">
+                      <mat-label>Previous Claims</mat-label>
+                      <input
+                        matInput
+                        type="number"
+                        class="name"
+                        formControlName="past_claims"
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="button-calculate" style="margin-top: 10px">
+                  <button
+                    mat-raised-button
+                    color="primary"
+                    type="submit"
+                    class="button-mat"
+                    (click)="onCalculate()"
+                    [disabled]="!claimForm.valid"
+                  >
+                    <div class="button-text">Calculate</div>
+                  </button>
+                </div>
+                <!-- <div class="result" *ngIf="true" >
+                  <div class="result-value">
+                    <p> <span class="text-estimate"> Your Estimate is :</span> <span class="text-result"> 1000000{{ this.estimate }}</span></p>
+                  </div>
+                  
+                  <div class="okay-button">
+                    <div style="padding-right: 5px">
+                      <button
+                        mat-raised-button
+                        color="primary"
+                        type="submit"
+                        class="button-mat"
+                        (click)="onOkay()"
+                      >
+                        Okay
+                      </button>
+                    </div>
+                    <div style="padding-left: 5px">
+                      <button
+                        mat-raised-button
+                        color="primary"
+                        type="submit"
+                        class="button-mat"
+                        (click)="onPrint()"
+                      >
+                        Print
+                      </button>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+      </form>
+    </div>
+  </mat-sidenav-container>
+</div>

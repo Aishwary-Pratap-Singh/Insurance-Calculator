@@ -1,0 +1,357 @@
+// top - nav bar
+:is(.menu-spacer, .spacer) {
+    flex: 1 1 auto;
+}
+
+.mat-sidenav {
+    width: 175px;
+}
+
+.mat-toolbar {
+    min-height: 50px !important;
+    height: 66px !important;
+    background-color: #34b2b2;
+}
+
+.mat-toolbar-row {
+    min-height: 50px !important;
+    height: 100% !important;
+} 
+
+.sidenav {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    color: rgba(249, 243, 243, 0.85);
+    text-shadow: 0.1px 0px #d6cdcd;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 1.4;
+    margin-left: 15px;
+    padding-top: 1px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+:is(.side-menu p,.menu-options a) {
+    color: rgba(249, 243, 243, 0.85);
+    font-weight: 550;
+    font-size: 18px;
+    line-height: 1.4;
+    margin-left: 15px;
+    padding-top: 1px;
+    text-shadow: 0.1px 0px #d6cdcd;
+}
+
+a{
+    height: 35px;
+    color: rgba(43, 36, 36, 0.85);
+    font-weight: 550;
+    font-size: 18px;
+    line-height: 1.4;
+    margin-left: 15px;
+    padding-top: 1px;
+    text-shadow: 0.1px 0px #6a6767;
+    text-align: center;
+    
+}
+
+
+.selected{
+    background-color: rgba(11, 60, 60, 0.396);
+    color: rgb(196, 216, 216);
+    text-decoration: solid;
+    text-align: center;
+    padding-top: 5px;
+}
+
+
+// top - nav bar
+
+
+// main content
+.request-heading{
+    color: rgba(22, 14, 14, 0.85);
+    font-weight: 5250;
+    font-size: 30px;
+    line-height: 1.4;
+    margin-left: 15px;
+    padding-top: 4px;
+    text-shadow: 0.1px 0px #6a6767;
+    padding-left: 10%;
+
+}
+body {
+    height: 100%;
+}
+
+.outer-border{
+    height: calc(100vh - 52px);
+    // background-color: rgb(249, 255, 252);
+    max-height: 100%;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main-heading{
+    height: 45px !important;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    
+    padding-top: 4px;
+    // background-color: #e8eeeedd;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+.inner-border{
+    width: 80%;
+    min-height: 90%;
+    height: max-content;
+    // border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    background-color: #f5f9f9d8;
+    // border-top:1px groove #706d6d53;
+}
+.table{
+    padding-top: 7px;
+    overflow: auto;
+}
+
+
+::ng-deep .mat-tab-label .mat-tab-label-content {
+    font-size: large;
+    color: #000000;
+    text-shadow: 0.1px 0px rgb(29, 28, 28);
+}
+
+:is(.request,.allrequests){
+    height: 100%;
+    width: fit-content;
+    padding: 10px 10px 0px 10px;    
+}
+.inner-content{
+    height: 100%;
+    width: 95%;
+    // border: 1px solid rgb(21, 166, 214);
+}
+:is(.allrequestsbody, .requestbody){
+    
+    padding-top: 7px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgb(231, 238, 245);
+}
+.form .form-heading{
+    
+    height: 60px;
+    width: 100%;
+    // border: 1px solid red;
+    background-color: rgba(113, 190, 140, 0.933);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+}
+
+.heading-text {
+    margin-top: 2%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.text{
+    color: rgba(22, 14, 14, 0.85);
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 1.4;
+    margin-left: 15px;
+    padding-top: 5px;
+    text-shadow: 0.1px 0px #6a6767;
+    padding-bottom: 10px;
+
+    
+}
+
+.formcontent{
+    height: 100%;
+    width: 100%;
+    // border: 1px solid rgb(6, 7, 5);
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3px;
+}
+
+.form .buttons{
+    height: fit-content;
+    width: 100%;
+    // border: 1px solid blue;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+:is( .button-mat) {
+    color: #131818;
+    font-size: x-large;
+    font-weight: 500;
+    text-shadow: 0.1px 0px #a8a2a2;
+}
+
+.button-submit {
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    height: 50px;
+}
+
+
+
+.mat-raised-button {
+    background-color: rgba(70, 204, 148, 0.933);
+    width: 50%;
+}
+.example-full-width {
+    padding-top: 13px;
+    width: 90%;
+    padding-left: 5%;
+  }
+
+.mat-tab-body-content {
+    height: 99%; 
+    overflow: auto;
+}
+
+// main - content
+th{
+    background-color: rgba(1, 9, 1, 0.682);
+    font-size: 20px;
+    font-weight: 550;
+    text-align: center;
+    color: rgb(236, 236, 236);
+    text-shadow: 0.1px 0 rgb(241, 241, 241);
+    text-transform: capitalize;
+}
+tr{
+    font-size: 13px;
+    font-weight: 401;
+    text-transform: capitalize;
+
+}
+tr:nth-child(even) {
+    background-color: rgb(244, 254, 255);
+}
+tr:nth-child(4n-1) {
+    background-color: rgba(239, 239, 239, 0.777);
+}
+
+
+
+.table-heading{
+    color: rgb(241, 237, 237);
+    font-size: 20px;
+    font-weight: 550;
+    text-shadow: 0.1px 0 rgb(205, 208, 208);
+    text-align: center;
+    
+}
+
+
+
+::ng-deep .mat-sort-header-arrow {
+    color: #fff;
+}
+.mat-sort-header{
+    text-align: center;
+}
+// td {
+//     text-align: center;
+//     // border-style: hidden;
+//     border-bottom: 1px groove black ;
+//   }
+  
+
+// ::ng-deep .mat-sort-header-container {
+//     display: flex;
+//     cursor: pointer;
+//     align-items: center;
+//     letter-spacing: normal;
+//     outline: 0;
+//     justify-content: center;
+//     flex-wrap: nowrap;
+//     align-content: stretch;
+    
+// }
+
+
+table {
+    width: 90%;
+}
+
+tr.example-detail-row {
+    height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+    background: rgb(208, 208, 208);
+    color: rgb(236, 236, 236);
+    text-shadow: 0.1px 0 rgb(241, 241, 241);
+    
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+    background: #bababa;
+}
+
+.example-element-row td {
+    border-bottom-width: 0;
+}
+
+.example-element-detail {
+    overflow: hidden;
+    display: flex;
+}
+
+.example-element-diagram {
+    min-width: 80px;
+    // border: 2px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    margin: 8px 0;
+    height: 104px;
+}
+
+.example-element-symbol {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: normal;
+}
+
+.example-element-description {
+    padding: 16px;
+}
+
+.example-element-description-attribution {
+    opacity: 0.5;
+}

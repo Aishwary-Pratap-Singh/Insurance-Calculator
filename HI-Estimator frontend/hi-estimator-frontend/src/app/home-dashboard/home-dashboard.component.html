@@ -1,0 +1,262 @@
+<!-- diesese claims
+total claims -->
+
+<div>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span class="title">HI-ESTIMATOR</span>
+      <span class="menu-spacer"></span>
+      <div fxShow="true" fxHide.lt-md class="menu-options">
+        <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+        <a class="selected" mat-button style="padding-top: 4px">Home</a>
+        <a
+          routerLink="/home/claim"
+          mat-button
+          style="
+            color: rgb(12, 15, 26);
+            height: 15px;
+            text-shadow: 0.1px 0 rgb(54, 54, 54);
+          "
+          >Claims</a
+        >
+        <a
+          routerLink="/home/profile"
+          mat-button
+          style="
+            color: rgb(12, 15, 26);
+            height: 15px;
+            text-shadow: 0.1px 0 rgb(54, 54, 54);
+          "
+          >Profile</a
+        >
+        <a
+          routerLink="/home/history"
+          mat-button
+          style="
+            color: rgb(12, 15, 26);
+            height: 15px;
+            text-shadow: 0.1px 0 rgb(54, 54, 54);
+          "
+          >History</a
+        >
+        <!-- <a href="#" mat-button>History</a> -->
+        <a
+          (click)="onLogOut()"
+          mat-button
+          style="
+            color: rgb(12, 15, 26);
+            height: 15px;
+            text-shadow: 0.1px 0 rgb(54, 54, 54);
+          "
+          >Log Out</a
+        >
+      </div>
+      <button
+        mat-icon-button
+        (click)="sidenav.toggle()"
+        fxShow="true"
+        fxHide.gt-sm
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav
+      #sidenav
+      position="end"
+      style="height: 100vh"
+      [autoFocus]="false"
+    >
+      <mat-nav-list class="sidenav">
+        <div><a routerLink="/home" mat-button class="selected">Home</a></div>
+        <div><a mat-button>Claims</a></div>
+        <div><a routerLink="/home/profile" mat-button>Profile</a></div>
+        <!-- <div><a href="#" mat-button>History</a></div> -->
+        <div><a (click)="onLogOut()" mat-button>Log Out</a></div>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <div class="content">
+      <div class="main-content">
+        <div class="main-big-screens" fxShow="true" fxHide.lt-md>
+          <div class="big-body">
+            <mat-grid-list
+              cols="3"
+              rowHeight="100%"
+              class="grid"
+              style="min-height: 450px; min-width: 250px; padding-bottom: 50px"
+            >
+              <mat-grid-tile [colspan]="1" [rowspan]="1" class="left">
+                <div class="left-grid">
+                  <div class="left-matter">
+                    <h2>Hi, {{ this.firstname }} {{ this.lastname }}</h2>
+
+                    Seems you to be new here, start with registring your
+                    policies here. This is best Health Insurance Estimator
+                    available throughout the world wide web.
+                  </div>
+                  <div class="button">
+                    <button
+                      mat-raised-button
+                      color="primary"
+                      type="submit"
+                      class="button-mat"
+                      (click)="onEstimate()"
+                    >
+                      Check Estimate <mat-icon>arrow_forward</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="2" [rowspan]="1" class="right">
+                <div class="right-grid">
+                  <div class="info-heading">
+                    WHY Health Insurance Estimator?
+                  </div>
+
+                  <div class="right-matter">
+                   <strong>Stop & Understand the product:</strong> 
+                    <br />
+                    We do not sell insurance nor charge you for our services,
+                    this product is available to calculate your medical amount
+                    that will be covered under the given policy
+                    <br />
+                    <br />
+                    <strong> Utilize your policy wisely:</strong>
+                    <br />
+                    Our estimation will provide you bandwidth to know your
+                    coverage beforehand so that you do not endup paying those
+                    charges from your pockets.
+                  </div>
+                </div>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </div>
+        </div>
+
+        <div class="main-small-screens" fxShow="true" fxHide.gt-sm>
+          <div class="heading">Insurance - Estimator</div>
+          <div class="context">
+            Stop & Understand the product:
+            <br />
+            We do not sell insurance nor charge you for our services, this
+            product is available to calculate your medical amount that will be
+            covered under the given policy
+            <br />
+            <br />
+            Utilize your policy wisely:
+            <br />
+            Our estimation will provide you bandwidth to know your coverage
+            beforehand so that you do not endup paying those charges from your
+            pockets.
+          </div>
+          <div class="button">
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              class="button-mat"
+              (click)="onEstimate()"
+            >
+              Check Estimate <mat-icon>arrow_forward</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="brands">
+        <div class="brands-heading heading heading-color" style="padding: 20px 0;">Popular Insurers</div>
+        <div class="brand-items">
+          <div class="brand-card">
+            <div class="logo">
+              <img src="../../assets/bajaj.png" class="img" />
+            </div>
+            <div class="name">
+              <a
+                href="https://www.bajajallianz.com/health-insurance-plans.html"
+              >
+                <b> Bajaj </b></a
+              >
+            </div>
+          </div>
+          <div class="brand-card">
+            <div class="logo">
+              <img mat-card-image src="../../assets/hdfc.png" class="img" />
+            </div>
+            <div class="name">
+              <a href="https://www.hdfcergo.com/health-insurance">
+                <b> Hdfc </b>
+              </a>
+            </div>
+          </div>
+          <div class="brand-card">
+            <div class="logo">
+              <img mat-card-image src="../../assets/acko.jpeg" class="img" />
+            </div>
+            <div class="name">
+              <a href="https://www.acko.com/health-insurance/">
+                <b> Acko </b></a
+              >
+            </div>
+          </div>
+
+          <div class="brand-card">
+            <div class="logo">
+              <img
+                mat-card-image
+                src="../../assets/national insurance.png"
+                class="img"
+              />
+            </div>
+            <div class="name">
+              <a
+                href="https://nationalinsurance.nic.co.in/en/health-insurance/national-mediclaim-policy-individual-plan"
+              >
+                <b> National Insurance </b></a
+              >
+            </div>
+          </div>
+
+          <div class="brand-card">
+            <div class="logo">
+              <img mat-card-image src="../../assets/icici.png" class="img" />
+            </div>
+            <div class="name">
+              <a href="https://www.icicilombard.com/health-insurance">
+                <b> Icici </b></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq">
+        <div class="faq-heading heading">FAQ</div>
+        <div class="card">
+        <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+        <mat-panel-title> <strong>Q. &nbsp;</strong>Can I calculate estimated amount of charges under certain cover? </mat-panel-title>
+        <!-- <mat-panel-description>
+        This is a summary of the content
+        </mat-panel-description> -->
+        </mat-expansion-panel-header>
+        <p><strong>A. &nbsp;</strong> Yes, you just need to enter few details then you can get your estimated amount.</p>
+        </mat-expansion-panel>
+        </div>
+        <div class="card">
+        <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+        <mat-panel-title> <strong>Q. &nbsp;</strong> Do we need to pay for this service?</mat-panel-title>
+        <!-- <mat-panel-description>
+        This is a summary of the content
+        </mat-panel-description> -->
+        </mat-expansion-panel-header>
+        <p><strong>A. &nbsp;</strong>Its basic version is free for everyone.</p>
+        </mat-expansion-panel>
+        </div>
+        </div>
+        </div>
+        </mat-sidenav-container>
+       </div>

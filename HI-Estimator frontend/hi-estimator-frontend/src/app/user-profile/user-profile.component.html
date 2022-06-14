@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <nav class="navbar ">
+      <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <span class="title">HI-ESTIMATOR</span>
+            <span class="menu-spacer"></span>
+            <div fxShow="true" fxHide.lt-md class="menu-options">
+              <a mat-button routerLink="/home" style="color: rgb(12, 15, 26);height: 15px; text-shadow: 0.1px 0 rgb(54, 54, 54);">Home</a>
+              <a mat-button routerLink="/home/claim" style="color: rgb(12, 15, 26);height: 15px; text-shadow: 0.1px 0 rgb(54, 54, 54);">Claims</a>
+                <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+                <a  mat-button style="padding-top: 4px;" class="selected">Profile</a>
+                <a routerLink="/home/history" mat-button style="color: rgb(12, 15, 26);height: 15px; text-shadow: 0.1px 0 rgb(54, 54, 54);">History</a>
+                <!-- <a href="#" mat-button>History</a> -->
+                <a (click)="onLogOut()" mat-button style="color: rgb(12, 15, 26);height: 15px; text-shadow: 0.1px 0 rgb(54, 54, 54);">Log Out</a>
+            </div>
+            <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+                <mat-icon>menu</mat-icon>
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+  
+    <mat-sidenav-container fxFlexFill >
+        <mat-sidenav #sidenav position="end"  [autoFocus]="false">
+            <mat-nav-list class="sidenav" >
+              <div><a  mat-button routerLink="/home/claim">Home</a></div>
+              <div><a  mat-button routerLink="/home/claim">Claims</a></div>
+                <div><a href="#" mat-button style="background-color: rgba(234, 239, 238, 0.57);">Profile</a></div>
+                
+                <!-- <div><a href="#" mat-button>History</a></div> -->
+                <div><a href="#" mat-button>Log Out</a></div>
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content></mat-sidenav-content>
+        </mat-sidenav-container>
+      </nav>
+      <br>
+      <br>
+<div class="container">
+	
+	<div class="row">
+		<div class="col-xs-12 col-md-6 col-lg-3">
+			<div class="userProfileInfo">
+				<div class="image text-center">
+					<img src="{{'data:image/jpg;base64,' + this.imageString}}" alt="Profile Pic" class="img-responsive">
+          <a class="editImage" (click)="openProfileDialog()" style="margin-right: 65px;">
+						<mat-icon class="mat-18" >edit</mat-icon>
+					</a>
+          <a class="editImage" (click)="openImageDialog()" >
+						<mat-icon class="mat-18" >photo_camera</mat-icon>
+					</a>
+          
+				</div>
+				<div class="box" style="background-color: rgb(241, 241, 241);">
+					<div class="name"><strong>{{this.firstname}},{{this.lastname}}</strong></div>
+					<div class="info">
+						<span><i class="fa fa-fw fa-phone"></i> <a href="tel:+4210555888777" title="#">{{this.phone}}</a></span>
+						<span><i class="fa fa-fw fa-envelope"></i> <a href="#" title="#">{{this.email}}</a></span>
+						<span><i class="fa fa-fw fa-home"></i>  {{this.address}}</span>
+					</div>
+		
+				</div>
+			</div>
+		</div>
+
+
+        
+
+    <div class="col-xs-12 col-md-8 col-lg-9 middle">
+    <!-- <div class="middle"> -->
+        <h3 >User Details</h3>
+     
+        <div class="table-responsive">
+          <table class="table align-middle">
+            <thead>
+              <tr class="align-middle"></tr>
+              <tr></tr>
+  
+              <tr class="align-bottom"></tr>
+            </thead>
+            <tbody class=".text-success">
+              <!-- Display user data-->
+              <tr>
+                <td class="pad"> Current Policy Number</td>
+                <td class="pad">{{policyNumber}}</td>
+              </tr>
+              <tr>
+                <td class="pad">Due Date</td>
+                <td class="pad">{{dueDate}}</td>
+              </tr>
+              <tr>
+                <td class="pad">Purchased On</td>
+                <td class="pad">{{purchasedOn}}</td>
+              </tr>
+              <tr>
+                <td class="pad">Premium Amount</td>
+                <td class="pad">{{purchasedAmount}}</td>
+              </tr>
+              
+              
+              <tr>
+                <td class="pad">
+                  <button type="button" class="btn btn-secondary col-btn" routerLink="/home/claim">
+                    Calculate Bill
+                  </button>
+                </td>
+                <td class="pad" [hidden]="">
+                  
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <span id="last"></span>
+        </div>
+      </div>
+
+    </div>
+
+    
+</div>
+
+
+      
+
+
+</body>
